@@ -2,11 +2,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #6a11cb, #2575fc);
+    background-size: 400% 400%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .login-container {
@@ -46,6 +60,7 @@ body {
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
 }
 
 .input-group input:focus {
@@ -58,7 +73,9 @@ body {
 }
 
 .password-group .password-input input {
-    padding-right: 40px;
+    padding-right: 40px; /* Espaço para o ícone */
+    width: 100%; /* Garante que o campo ocupe 100% do espaço */
+    box-sizing: border-box; /* Mantém o tamanho consistente */
 }
 
 .password-group .password-input i {
@@ -69,6 +86,7 @@ body {
     cursor: pointer;
     color: #777;
     transition: color 0.3s ease;
+    pointer-events: auto; /* Permite clicar no ícone */
 }
 
 .password-group .password-input i:hover {
@@ -112,5 +130,26 @@ button:active {
 
 .links a:hover {
     color: #1a5bbf;
+    text-decoration: underline;
+}
+
+/* Estilos para o rodapé */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #2575fc;
     text-decoration: underline;
 }
