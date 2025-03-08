@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Resultados</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Meu Dashboard de Resultados</h1>
+        
+        <!-- Seção de Meta Diária -->
+        <div class="meta-section">
+            <h2>Definir Meta Diária</h2>
+            <input type="number" id="metaDiaria" placeholder="Digite sua meta diária" min="1">
+            <button onclick="definirMeta()">Definir Meta</button>
+            <p id="metaAtual"></p>
+        </div>
+
+        <!-- Seção de Registro Diário -->
+        <div class="registro-section">
+            <h2>Registrar Resultado Diário</h2>
+            <input type="number" id="resultadoDiario" placeholder="Digite o resultado de hoje" min="0">
+            <button onclick="registrarResultado()">Registrar</button>
+        </div>
+
+        <!-- Seção de Resultados -->
+        <div class="resultados-section">
+            <h2>Resultados do Mês</h2>
+            <p>Total Resolvidos: <span id="totalResolvidos">0</span></p>
+            <p>Meta Diária: <span id="metaDiariaAtual">0</span></p>
+            <p>Dias Restantes: <span id="diasRestantes">30</span></p>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
