@@ -10,19 +10,22 @@ body {
 }
 
 .login-container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .login-box h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
     color: #333;
     text-align: center;
+    font-weight: 600;
 }
 
 .input-group {
@@ -33,14 +36,43 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     color: #555;
+    font-weight: 500;
 }
 
 .input-group input {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+
+.password-group .password-input {
+    position: relative;
+}
+
+.password-group .password-input input {
+    padding-right: 40px;
+}
+
+.password-group .password-input i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.password-group .password-input i:hover {
+    color: #2575fc;
 }
 
 button {
@@ -49,18 +81,24 @@ button {
     background: #2575fc;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
 }
 
 button:hover {
     background: #1a5bbf;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 .links {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     text-align: center;
 }
 
@@ -69,8 +107,10 @@ button:hover {
     text-decoration: none;
     margin: 0 0.5rem;
     font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
 .links a:hover {
+    color: #1a5bbf;
     text-decoration: underline;
 }
