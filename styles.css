@@ -12,15 +12,9 @@ body {
 }
 
 @keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .login-container {
@@ -32,6 +26,13 @@ body {
     max-width: 400px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 2rem;
+        max-width: 90%;
+    }
 }
 
 .login-box h2 {
@@ -60,7 +61,7 @@ body {
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+    box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -73,9 +74,9 @@ body {
 }
 
 .password-group .password-input input {
-    padding-right: 40px; /* Espaço para o ícone */
-    width: 100%; /* Garante que o campo ocupe 100% do espaço */
-    box-sizing: border-box; /* Mantém o tamanho consistente */
+    padding-right: 40px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .password-group .password-input i {
@@ -86,7 +87,7 @@ body {
     cursor: pointer;
     color: #777;
     transition: color 0.3s ease;
-    pointer-events: auto; /* Permite clicar no ícone */
+    pointer-events: auto;
 }
 
 .password-group .password-input i:hover {
@@ -111,8 +112,16 @@ button:hover {
     transform: translateY(-2px);
 }
 
-button:active {
-    transform: translateY(0);
+button:disabled {
+    background: #b0c4de;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-align: center;
 }
 
 .links {
@@ -133,7 +142,6 @@ button:active {
     text-decoration: underline;
 }
 
-/* Estilos para o rodapé */
 .footer {
     position: absolute;
     bottom: 20px;
@@ -152,4 +160,10 @@ button:active {
 .footer a:hover {
     color: #2575fc;
     text-decoration: underline;
+}
+
+/* Estilo para o texto da versão */
+.footer .version {
+    font-weight: bold;
+    margin-left: 5px;
 }
